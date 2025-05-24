@@ -9,12 +9,14 @@ import java.util.UUID;
 public class Inventory {
     private final String id = UUID.randomUUID().toString();
 
-    @NotNull
-    private String name;
-
+    @NotNull private String name;
     @NotNull private String description;
     @NotNull private Integer quantity;
     @NotNull private Double price;
+
+    public Inventory() {
+        super();
+    }
 
     public Inventory(InventoryBuilder builder) {
         this.name = builder.name;
