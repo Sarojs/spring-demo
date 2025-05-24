@@ -3,7 +3,6 @@ package com.learners.demo.entity;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;
-import org.springframework.core.serializer.Deserializer;
 
 import java.util.UUID;
 
@@ -16,17 +15,6 @@ public class Inventory {
     @NotNull private String description;
     @NotNull private Integer quantity;
     @NotNull private Double price;
-
-    public Inventory(){
-    }
-
-    @JsonCreator
-    public Inventory(@JsonProperty @NotNull String name, @JsonProperty @NotNull String description, @JsonProperty Integer quantity, @JsonProperty Double price) {
-        this.name = name;
-        this.description = description;
-        this.quantity = quantity;
-        this.price = price;
-    }
 
     public Inventory(InventoryBuilder builder) {
         this.name = builder.name;
