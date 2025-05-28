@@ -1,10 +1,13 @@
 package com.learners.demo.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 public class HelloController {
+
+    @Operation(summary = "Find user by id", description = "Return 200 if the user exists.")
     @GetMapping("/hello")
     public String sayHello() {
         System.out.println("Received GET request to /hello");

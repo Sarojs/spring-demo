@@ -3,6 +3,12 @@ package com.learners.demo.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.learners.demo.entity.Inventory;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.springframework.http.HttpHeaders;
@@ -17,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/inventory")
 public class InventoryController {
 
-    private Logger logger = org.slf4j.LoggerFactory.getLogger(InventoryController.class);
+    private final Logger logger = org.slf4j.LoggerFactory.getLogger(InventoryController.class);
 
     @PostMapping("/add")
     public ResponseEntity<String> addInventory(@Valid @RequestBody Inventory inventory) {
